@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+
 /* main */
 #meeting-view {
     margin-bottom: 60px;
@@ -12,14 +13,17 @@
     position: relative;
     background-color: rgb(10, 12, 10);
     overflow: auto;
-
 }
+    /* scrollbar disappear */
+#meeting-view::-webkit-scrollbar {
+    display: none;
+  }
 
-#user-video-grid {
+#meeting-video-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 2% 0;
+    padding: 2% 40px;
     float: left;
     /* debug */
     /* background-color: green; */
@@ -27,8 +31,8 @@
 
 .user-video-box {
     /* margin: 0.5%; */
-    margin: 1px;
-    width: calc(100vw / 5 - 2px);
+    margin: 0 2px;
+    width: calc(100vw / 5 - 40px);
     min-width: 300px;
 }
 
@@ -44,11 +48,13 @@
     float: left;
     width: 40px;
     height: calc(100vh - 60px);
-    background-color: royalblue;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: rgba(46,186,255,255);
+    /* debug */
+    /* background-color: royalblue; */
 }
 
 .meeting-arrow.left {
@@ -62,11 +68,30 @@
 }
 
 /* footer */
-#footer-nav {
+footer {
     position: fixed;
     bottom: 0;
     width: 100%;
     height: 60px;
     /* debug */
     background-color: hotpink;
+    font-size: 50px;
+    color: rgb(230, 230, 230);
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+/* debug */
+footer div:nth-child(1) {
+    background-color: royalblue;
+}
+
+footer div:nth-child(2) {
+    background-color: red;
+}
+
+footer div:nth-child(3) {
+    background-color: green;
 }
