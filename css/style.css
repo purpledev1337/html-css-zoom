@@ -9,6 +9,10 @@
 #meeting-view {
     margin-bottom: 60px;
     height: calc(100vh - 60px);
+    position: relative;
+    background-color: rgb(10, 12, 10);
+    overflow: auto;
+
 }
 
 #user-video-grid {
@@ -16,18 +20,46 @@
     flex-wrap: wrap;
     justify-content: center;
     padding: 2% 0;
-    background-color: green;
+    float: left;
+    /* debug */
+    /* background-color: green; */
 }
 
 .user-video-box {
     /* margin: 0.5%; */
-    margin: 1px;
-    width: calc(20% - 2px);
-    min-width: 150px;
+    /* margin: 1px; */
+    width: calc(100vw / 2);
+    max-width: 30vw;
+    min-width: 300px;
 }
 
 .user-video-box img {
     width: 100%;
+}
+
+.meeting-arrow i {
+    font-size: 40px;
+}
+
+.meeting-arrow {
+    float: left;
+    width: 40px;
+    height: calc(100vh - 60px);
+    background-color: royalblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.meeting-arrow.left {
+    position: fixed;
+    left: 0;
+}
+
+.meeting-arrow.right {
+    position: fixed;
+    right: 0;
 }
 
 /* footer */
