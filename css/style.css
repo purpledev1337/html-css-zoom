@@ -8,8 +8,8 @@
 
 /* main */
 #meeting-view {
-    margin-bottom: 60px;
-    height: calc(100vh - 60px);
+    margin-bottom: 80px;
+    height: calc(100vh - 80px);
     background-color: rgb(10, 12, 10);
     overflow: auto;
 }
@@ -21,7 +21,7 @@
 #meeting-video-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     padding: 2% 40px;
     float: left;
     position: relative;
@@ -32,8 +32,8 @@
 .user-video-box {
     /* margin: 0.5%; */
     margin: 0 2px;
-    width: calc(100vw / 5 - 40px);
-    min-width: 300px;
+    width: calc(100vw / 5 - 20px);
+    min-width: 250px;
     position: relative;
 }
 
@@ -52,6 +52,14 @@
     font-size: 16px;
 }
 
+.user-video-name:hover {
+cursor: context-menu;
+}
+
+.user-video-box:hover {
+    cursor: grab;
+}
+
 .meeting-arrow i {
     font-size: 40px;
 }
@@ -59,28 +67,33 @@
 .meeting-arrow {
     float: left;
     width: 40px;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: rgba(46,186,255,255);
     /* debug */
     /* background-color: royalblue; */
 }
 
-.meeting-arrow:hover {
-    cursor: pointer;
+.meeting-arrow i:hover {
+    cursor:not-allowed;
 }
 
 .meeting-arrow.left {
     position: fixed;
     left: 0;
+    color: rgba(127,127,127,255);
 }
 
 .meeting-arrow.right {
     position: fixed;
     right: 0;
+    color: rgba(46,186,255,255);
+}
+
+.meeting-arrow span {
+    color: white;
 }
 
 #view-controls {
@@ -101,7 +114,7 @@
 }
 
 #view-controls div:hover {
-    cursor: pointer;
+    cursor: context-menu;
 }
 
 #view-controls div span {
@@ -113,21 +126,60 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 60px;
-    /* debug */
+    height: 80px;
     background-color: rgba(0, 0, 0, 0.9);
-    font-size: 50px;
     color: rgb(230, 230, 230);
     display: flex;
     justify-content: space-between;
 }
 
-#footer-end-overlay {
+footer .footer-sub {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.footer-sub .fa-chevron-up {
+    margin-left: -15px;
+}
+
+.footer-btn {
+    text-align: center;
+    padding: 0 25px;
+    position: relative;
+}
+
+.footer-btn i {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.footer-btn span {
+    display: block;
+    font-size: 18px;
+}
+
+#number-people {
+    position: absolute;
+    top: 0;
+    right: 26%;
+}
+
+.center-col .footer-btn:nth-child(4) i {
+    color: green;
+}
+
+#footer-end {
     background-color: rgba(255, 255, 255, 0.30);
     font-size: 18px;
     font-weight: 600;
     color: red;
     padding: 0 15px;
-    line-height: 60px;
+    line-height: 80px;
     vertical-align: middle;
+}
+
+#footer-end:hover {
+    cursor: context-menu;
 }
