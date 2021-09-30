@@ -10,7 +10,6 @@
 #meeting-view {
     margin-bottom: 60px;
     height: calc(100vh - 60px);
-    position: relative;
     background-color: rgb(10, 12, 10);
     overflow: auto;
 }
@@ -25,6 +24,7 @@
     justify-content: center;
     padding: 2% 40px;
     float: left;
+    position: relative;
     /* debug */
     /* background-color: green; */
 }
@@ -34,10 +34,22 @@
     margin: 0 2px;
     width: calc(100vw / 5 - 40px);
     min-width: 300px;
+    position: relative;
 }
 
 .user-video-box img {
     width: 100%;
+}
+
+.user-video-name {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.50);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 30px;
+    padding: 4px;
+    font-size: 16px;
 }
 
 .meeting-arrow i {
@@ -57,6 +69,10 @@
     /* background-color: royalblue; */
 }
 
+.meeting-arrow:hover {
+    cursor: pointer;
+}
+
 .meeting-arrow.left {
     position: fixed;
     left: 0;
@@ -67,6 +83,31 @@
     right: 0;
 }
 
+#view-controls {
+    margin: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+}
+
+#view-controls div {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.20);
+    padding: 8px;
+    border-radius: 10px;
+}
+
+#view-controls div:hover {
+    cursor: pointer;
+}
+
+#view-controls div span {
+    margin-left: 8px;
+}
+
 /* footer */
 footer {
     position: fixed;
@@ -74,24 +115,19 @@ footer {
     width: 100%;
     height: 60px;
     /* debug */
-    background-color: hotpink;
+    background-color: rgba(0, 0, 0, 0.9);
     font-size: 50px;
     color: rgb(230, 230, 230);
     display: flex;
     justify-content: space-between;
 }
 
-
-
-/* debug */
-footer div:nth-child(1) {
-    background-color: royalblue;
-}
-
-footer div:nth-child(2) {
-    background-color: red;
-}
-
-footer div:nth-child(3) {
-    background-color: green;
+#footer-end-overlay {
+    background-color: rgba(255, 255, 255, 0.30);
+    font-size: 18px;
+    font-weight: 600;
+    color: red;
+    padding: 0 15px;
+    line-height: 60px;
+    vertical-align: middle;
 }
